@@ -1,0 +1,12 @@
+- text: Особливості
+  link: "#features"
+
+- text: Питання Та Відповіді
+  link: "#faq"
+
+- text: Оновлення
+  link: "#changelog"
+
+- text: Придбати
+  aClass: "btn btn-yellow ml-0 lg:ml-3 my-5 lg:my-0"
+  link: "#buy"

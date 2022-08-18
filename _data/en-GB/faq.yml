@@ -1,0 +1,5 @@
+- question: Does it read or write something to my files?
+  answer: No, it only gets the positions, names, and icon images through Windows API but not content.
+
+- question: Why I can't see icons like "My PC", "Trash Bin" etc. in app?
+  answer: "\"Special folders\" are currently not supported in The Icon Battles due to the complexity of getting images of their icons. But it will be fixed in future updates."

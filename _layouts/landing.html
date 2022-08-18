@@ -1,0 +1,176 @@
+{% assign locale = site.data[page.lang] %}
+{% assign currentLanguage = site.data.languages | where: "code", page.lang | first %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en-GB" }}">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>{{ site.title }}</title>
+	<link rel="stylesheet" href="{{ "/assets/css/landing.css" }}">
+	<link rel="stylesheet" href="{{ "/assets/fontawesome/css/all.css" }}">
+	{% include head.html %}
+</head>
+
+<body>
+	<div class="bg-indigo-900">
+		<nav class="flex items-center flex-wrap container text-white">
+			<a href="#top" class="py-4 font-medium text-xl mr-auto">{{ site.title }}</a>
+			<button data-target="#navigation" class="nav-toggler inline-flex px-3 py-5 hover:bg-yellow-300 hover:text-gray-900 rounded lg:hidden outline-none">
+				<i class="fas fa-bars fa-lg"></i>
+			</button>
+			<div id="navigation" class="hidden rounded flex-col w-full lg:w-auto lg:block px-4 lg:px-0 order-2 lg:order-1">
+				{% for navItem in locale.nav %}
+				<a href="{{ navItem.link }}" class="{{ navItem.aClass | default: "py-3 lg:py-0 lg:p-4 hover:underline" }}">
+					{{ navItem.text }}
+				</a>
+				{% endfor %}
+			</div>
+
+			<div class="dropdown relative inline-block ml-5 order-1 lg:order-2">
+				<button class="dropdown-toggler">
+					{{ currentLanguage.name }} <i class="fas fa-angle-down ml-1"></i>
+				</button>
+				<div class="dropdown-content hidden z-10 w-44 absolute right-0 top-8 p-3 py-2 bg-white rounded shadow">
+					<ul class="text-gray-700">
+						{% for language in site.data.languages %}
+						<li class="my-1">
+							<a href="{{ language.siteUrl }}">{{ language.flagEmoji }} {{ language.name }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="bg-indigo-900">
+		<div class="container pt-20 pb-44" id="top">
+			<div class="flex flex-col md:flex-row gap-5">
+				<div class="flex-same-width">
+					<img src="/assets/images/sample-fight.gif" class="h-[300px] mx-auto" alt="Sample fight">
+				</div>
+				<div class="flex-same-width flex">
+					<div class="relative my-auto flex flex-col items-start justify-center text-gray-100 opacity-0 anim-right-observer">
+						<h1 class="text-4xl font-medium">{{ locale.texts.firstScreenTitle }}</h1>
+						<p class="mt-3">{{ locale.texts.firstScreenDescription }}</p>
+						<a href="#buy" class="btn btn-yellow mt-5">{{ locale.texts.firstScreenActionButton }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container pt-24 pb-12" id="features">
+		<div class="flex flex-col md:flex-row justify-around gap-5">
+			{% for feature in locale.features %}
+			<div class="card flex-same-width">
+				<h2 class="text-2xl">{{ feature.title }}</h2>
+				<p>{{ feature.description }}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="container py-12">
+		<h1 class="text-4xl text-center mb-5">{{ locale.texts.screensaverScreenTitle }}</h1>
+		<div class="flex flex-col lg:flex-row flex-nowrap items-center gap-10 mt-2">
+			<div class="flex-1 order-2 lg:order-1">
+				<p class="mb-2 text-lg text-gray-600 relative opacity-0 anim-left-observer">
+					{{ locale.texts.screensaverScreenDescription }}
+				</p>
+			</div>
+			<div class="grow-[0.7] shrink basis-0 order-1 lg:order-0 relative opacity-0 anim-right-observer">
+				<img src="{{ "/assets/images/screensaver-mockup.png" }}" alt="Laptop with screensaver icon" class="w-full">
+			</div>
+		</div>
+	</div>
+
+	<div class="container py-12" id="buy">
+		<h1 class="text-4xl text-center mb-2">{{ locale.texts.buyScreenTitle }}</h1>
+		<p class="text-center text-gray-600">{{ locale.texts.buyScreenDescription }}</p>
+
+		<div class="flex flex-col lg:flex-row flex-nowrap items-center gap-5 mt-5">
+			<div class="grow lg:grow-[1] shrink basis-0 w-full">
+				<div class="relative opacity-0 anim-left-observer">
+					<video
+						src="{{ "/assets/videos/coming-soon.mp4" }}"
+						poster="{{ "/assets/videos/coming-soon-poster.png" }}"
+						controls
+					></video>
+				</div>
+			</div>
+			<!-- <div class="flex-1 w-full">
+				<div class="relative opacity-0 anim-right-observer overflow-hidden block mt-4">
+					<iframe src="https://store.steampowered.com/widget/620" frameborder="0"
+					class="w-full h-[200px]"></iframe>
+				</div>
+			</div> -->
+		</div>
+	</div>
+
+	<div class="container py-12" id="faq">
+		<h1 class="text-4xl text-center mb-5">{{ locale.texts.faqScreenTitle }}</h1>
+
+		<div class="flex flex-wrap gap-5">
+			{% for faqItem in locale.faq %}
+			<div class="faq-item">
+				<div class="faq-item__title">{{ faqItem.question }}</div>
+				<div class="faq-item__content">{{ faqItem.answer }}</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="container py-12" id="changelog">
+		<h1 class="text-4xl text-center mb-2">{{ locale.texts.changelogScreenTitle }}</h1>
+		<div id="latest-version" class="versions-container"></div>
+		<div class="mt-4">
+			<button data-modal-link-id="changelog" class="underline text-gray-600">
+				{{ locale.texts.changelogScreenPreviousVersionsLink }}
+			</button>
+		</div>
+	</div>
+
+	<div class="bg-indigo-900 text-white">
+		<div class="container py-5">
+			<div class="flex justify-between items-center">
+				<p>Copyright &copy; 2022 Yenot Software</p>
+				<nav class="list-none flex gap-4">
+					{% for social in site.data.socials %}
+					<li>
+						<a href="{{ social.link }}" target="_blank">
+							<i class="{{ social.icon }}"></i>
+							<span class="sr-only">{{ social.name }}</span>
+						</a>
+					</li>
+					{% endfor %}
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal" data-modal-id="changelog">
+		<div class="modal__container">
+			<div class="modal__window">
+				<div class="modal__title">
+					<h1>{{ locale.texts.changelogScreenModalTitle }}</h1>
+					<button class="modal__close">x</button>
+				</div>
+				<div id="all-versions" class="versions-container"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Div to make tailwind work with custom animations which are added through a script -->
+	<div id="temp" class="lg:animate-appear-from-left lg:animate-appear-from-right"></div>
+
+	<script src="{{ "/assets/libs/purify.min.js" }}" type="text/javascript"></script>
+	<script src="{{ "/assets/libs/marked.min.js" }}" type="text/javascript"></script>
+	<script src="{{ "/assets/scripts/landing.js" }}" type="module"></script>
+
+</body>
+
+</html>

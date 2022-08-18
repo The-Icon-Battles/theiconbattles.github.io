@@ -1,0 +1,9 @@
+- name: English
+  flagEmoji: 🇬🇧
+  code: en-GB
+  siteUrl: /
+
+- name: Українська
+  flagEmoji: 🇺🇦
+  code: uk-UA
+  siteUrl: /uk

@@ -1,0 +1,108 @@
+---
+---
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+@layer utilities {
+	.flex-same-width {
+		@apply grow shrink basis-0;
+	}
+}
+
+@layer components {
+	/*
+		Card
+	*/
+	.card {
+		@apply p-4 rounded-md bg-indigo-200;
+	}
+
+	/*
+		FAQ item
+	*/
+	.faq-item {
+		@apply flex-grow-[2] flex-shrink-0 basis-[30%] border border-indigo-200 rounded-md py-5 px-4;
+	}
+
+	.faq-item__title {
+		@apply text-xl mb-1;
+	}
+
+	.faq-item__content {
+		@apply text-gray-700;
+	}
+
+	/*
+		Button
+	*/
+	.btn {
+		@apply text-center px-8 py-2 rounded-full transition-colors;
+	}
+
+	.btn.btn-yellow {
+		@apply bg-yellow-300 text-gray-900 hover:bg-yellow-400;
+	}
+
+	/*
+		Changelog
+	*/
+	.version-title {
+		@apply text-3xl mt-4;
+	}
+
+	.version-title small {
+		@apply text-gray-600;
+	}
+
+	.version-content {
+		@apply flex flex-col lg:flex-row gap-5 mt-1;
+	}
+
+	.version-content ul {
+		@apply list-disc ml-4;
+	}
+	
+	.version-content .card h3 {
+		@apply text-2xl;
+	}
+
+	/*
+		Modal
+	*/
+	.modal {
+		@apply fixed top-0 left-0 w-full h-full z-[999] bg-black bg-opacity-50;
+	}
+
+	.modal.active {
+		@apply flex;
+	}
+
+	.modal:not(.active) {
+		@apply hidden;
+	}
+
+	.modal__container {
+		@apply container m-auto;
+	}
+
+	.modal__window {
+		@apply bg-white p-4 max-h-[60vh] overflow-y-auto rounded-md;
+		scrollbar-width: none;
+	}
+
+	.modal__title {
+		@apply flex flex-row justify-between items-center;
+	}
+
+	.modal__title h1 {
+		@apply text-3xl;
+	}
+
+	.modal__title button {
+		@apply py-1 px-3 text-2xl text-gray-600 rounded-md hover:bg-gray-200;
+	}
+}
