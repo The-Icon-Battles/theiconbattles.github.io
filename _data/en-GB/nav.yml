@@ -4,9 +4,9 @@
 - text: FAQ
   link: "#faq"
 
-- text: Changelog
-  link: "#changelog"
+#- text: Changelog
+#  link: "#changelog"
 
 - text: Buy
-  aClass: "btn btn-yellow ml-0 lg:ml-3 mb-5 lg:mb-0"
+  aClass: "btn btn-yellow mx-0 lg:mx-3 mb-5 lg:mb-0"
   link: "#buy"

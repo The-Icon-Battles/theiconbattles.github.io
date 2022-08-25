@@ -21,7 +21,7 @@ document.querySelectorAll('.dropdown').forEach((dropdown) => {
 });
 
 // Changelog
-// TODO: get changelog from external source
+// TODO: enable changelog and show data from Steam
 const changelogSampleContent = `# Changelog
 All notable changes to this project will be documented in this file
 
@@ -301,6 +301,7 @@ const previousVersionsData = changelogData.slice(
 // Change text for first version - add "Latest version"
 changelogData[latestVersionIndex].tokens[0].text = `Latest version - ${changelogData[latestVersionIndex].tokens[0].text}`;
 
+/*
 document.querySelector('#latest-version').innerHTML = DOMPurify.sanitize(
     marked.parser(changelogData.splice(latestVersionIndex, previousVersionsStartIndex), { renderer })
 );
@@ -308,6 +309,7 @@ document.querySelector('#latest-version').innerHTML = DOMPurify.sanitize(
 document.querySelector('#all-versions').innerHTML = DOMPurify.sanitize(
     marked.parser(previousVersionsData, { renderer })
 );
+*/
 
 const nextUntil = (searchElem, ignoreSelector) => {
 	let result = [[]];
