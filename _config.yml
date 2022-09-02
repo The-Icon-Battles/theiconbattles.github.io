@@ -7,3 +7,5 @@ plugins:
 
 postcss:
   cache: false
+
+steam-appid: "2135980"
