@@ -1,0 +1,214 @@
+
+
+
+<!DOCTYPE html>
+<html lang="uk-UA">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>The Icon Battles</title>
+	<link rel="stylesheet" href="/assets/css/landing.css">
+	<link rel="stylesheet" href="/assets/fontawesome/css/all.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+	<div class="bg-indigo-900">
+		<nav class="flex items-center flex-wrap container text-white">
+			<a href="#top" class="py-4 font-medium text-xl mr-auto">The Icon Battles</a>
+			<button data-target="#navigation" class="nav-toggler inline-flex px-3 py-5 hover:bg-yellow-300 hover:text-gray-900 rounded lg:hidden outline-none">
+				<i class="fas fa-bars fa-lg"></i>
+			</button>
+			<div id="navigation" class="hidden rounded flex-col w-full lg:w-auto lg:block px-4 lg:px-0 order-2 lg:order-1">
+				
+				<a href="#features" class="py-3 lg:py-0 lg:p-4 hover:underline">
+					Особливості
+				</a>
+				
+				<a href="#faq" class="py-3 lg:py-0 lg:p-4 hover:underline">
+					Питання Та Відповіді
+				</a>
+				
+				<a href="#buy" class="btn btn-yellow mx-0 lg:mx-3 my-5 lg:my-0">
+					Придбати
+				</a>
+				
+			</div>
+
+			<div class="dropdown relative inline-block ml-5 order-1 lg:order-2">
+				<button class="dropdown-toggler">
+					Українська <i class="fas fa-angle-down ml-1"></i>
+				</button>
+				<div class="dropdown-content hidden z-10 w-44 absolute right-0 top-8 p-3 py-2 bg-white rounded shadow">
+					<ul class="text-gray-700">
+						
+						<li class="my-1">
+							<a href="/">🇬🇧 English</a>
+						</li>
+						
+						<li class="my-1">
+							<a href="/uk">🇺🇦 Українська</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="bg-indigo-900">
+		<div class="container pt-20 pb-44" id="top">
+			<div class="flex flex-col md:flex-row gap-5">
+				<div class="flex-same-width">
+					<img src="/assets/images/sample-fight.gif" class="h-[300px] mx-auto" alt="Sample fight">
+				</div>
+				<div class="flex-same-width flex">
+					<div class="relative my-auto flex flex-col items-start justify-center text-gray-100 opacity-0 anim-right-observer">
+						<h1 class="text-4xl font-medium">Влаштуйте бійню на вашому робочому столі!</h1>
+						<p class="mt-3">"The Icon Battles" - це додаток для Windows, який оживляє іконки на вашому робочому столі, і вони нескінченно б'ються один з одним.</p>
+						<a href="#buy" class="btn btn-yellow mt-5">Придбати</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container pt-24 pb-12" id="features">
+		<div class="flex flex-col md:flex-row justify-around gap-5">
+			
+			<div class="card flex-same-width">
+				<h2 class="text-2xl">Нескінченні бої</h2>
+				<p>Усі іконки беруть участь у нескінченних та процедурно згенерованих боях</p>
+			</div>
+			
+			<div class="card flex-same-width">
+				<h2 class="text-2xl">Зберігач екрану</h2>
+				<p>Ваші піктограми можуть почати рухатися, коли ви не користуєтесь комп'ютером деякий час</p>
+			</div>
+			
+			<div class="card flex-same-width">
+				<h2 class="text-2xl">Постійні оновлення</h2>
+				<p>Програма все ще не ідеальна, тому ми докладаємо всіх зусиль, щоб регулярно її покращувати</p>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="container py-12">
+		<h1 class="text-4xl text-center mb-5">Функція зберігача екрану</h1>
+		<div class="flex flex-col lg:flex-row flex-nowrap items-center gap-10 mt-2">
+			<div class="flex-1 order-2 lg:order-1">
+				<p class="mb-2 text-lg text-gray-600 relative opacity-0 anim-left-observer">
+					Додаток постачається з вбудованою функцією заставки. Увімкніть її в налаштуваннях та залиште ваш комп'ютер на хвилинку. Іконки оживуть та перетворять ваш робочий стіл на справжнє поле бою!
+				</p>
+			</div>
+			<div class="grow-[0.7] shrink basis-0 order-1 lg:order-0 relative opacity-0 anim-right-observer">
+				<img src="/assets/images/screensaver-mockup.png" alt="Laptop with screensaver icon" class="w-full">
+			</div>
+		</div>
+	</div>
+
+	<div class="container py-12" id="buy">
+		<h1 class="text-4xl text-center mb-2">Отримати The Icon Battles</h1>
+		<p class="text-center text-gray-600">Скоро ви зможете придбати додаток через магазин Steam!</p>
+
+		<div class="flex flex-col lg:flex-row flex-nowrap items-center gap-5 mt-5">
+			<div class="grow lg:grow-[1] shrink basis-0 w-full">
+				<div class="relative opacity-0 anim-left-observer">
+					<video
+						src="/assets/videos/coming-soon.mp4"
+						poster="/assets/videos/coming-soon-poster.png"
+						controls
+					></video>
+				</div>
+			</div>
+			<div class="flex-1 w-full">
+				<div class="relative opacity-0 anim-right-observer overflow-hidden block mt-4">
+					<iframe src="https://store.steampowered.com/widget/2135980" frameborder="0"
+					class="w-full h-[200px]"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container py-12" id="faq">
+		<h1 class="text-4xl text-center mb-5">Питання Та Відповіді</h1>
+
+		<div class="flex flex-wrap gap-5">
+			
+			<div class="faq-item">
+				<div class="faq-item__title">Ця програма якось змінює мої файли</div>
+				<div class="faq-item__content">Ні, воно лише отримує позицію, назву та піктограму іконок через Windows API, але ніяк не отримує та не змінює їх зміст.</div>
+			</div>
+			
+			<div class="faq-item">
+				<div class="faq-item__title">Чому в додатку не відображаються іконки "Мій комп'ютер", "Кошик" тощо?</div>
+				<div class="faq-item__content">"Спеціальні папки" на даний момент не підтримуються через складність отримання їх піктограм. Але це буде виправлено у майбутніх оновленнях.</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<!--
+	<div class="container py-12" id="changelog">
+		<h1 class="text-4xl text-center mb-2">Список змін</h1>
+		<div id="latest-version" class="versions-container"></div>
+		<div class="mt-4">
+			<button data-modal-link-id="changelog" class="underline text-gray-600">
+				Переглянути попередні версії
+			</button>
+		</div>
+	</div>
+	-->
+
+	<div class="bg-indigo-900 text-white">
+		<div class="container py-5">
+			<div class="flex justify-between items-center">
+				<p>Copyright &copy; 2022 Yenot Software</p>
+				<nav class="list-none flex gap-4">
+					
+					<li>
+						<a href="https://twitter.com/YenotSoftware" target="_blank">
+							<i class="fab fa-twitter"></i>
+							<span class="sr-only">Twitter</span>
+						</a>
+					</li>
+					
+					<li>
+						<a href="https://www.youtube.com/channel/UCEumUbLPK3eBQXT-qMcU_Zw" target="_blank">
+							<i class="fab fa-youtube"></i>
+							<span class="sr-only">Youtube</span>
+						</a>
+					</li>
+					
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal" data-modal-id="changelog">
+		<div class="modal__container">
+			<div class="modal__window">
+				<div class="modal__title">
+					<h1>Попередні версії</h1>
+					<button class="modal__close">x</button>
+				</div>
+				<div id="all-versions" class="versions-container"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Div to make tailwind work with custom animations which are added through a script -->
+	<div id="temp" class="lg:animate-appear-from-left lg:animate-appear-from-right"></div>
+
+	<script src="/assets/libs/purify.min.js" type="text/javascript"></script>
+	<script src="/assets/libs/marked.min.js" type="text/javascript"></script>
+	<script src="/assets/scripts/landing.js" type="module"></script>
+
+</body>
+
+</html>
